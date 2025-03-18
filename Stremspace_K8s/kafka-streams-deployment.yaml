@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-streams-app
+  namespace: streamspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-streams
+  template:
+    metadata:
+      labels:
+        app: kafka-streams
+    spec:
+      containers:
+        - name: kafka-streams
+          image: manula-random-number-application-kafka-streams-app:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+            - containerPort: 9998
+          env:
+            - name: KAFKA_BROKER
+              value: "kafka-service:9092"
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "512Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"

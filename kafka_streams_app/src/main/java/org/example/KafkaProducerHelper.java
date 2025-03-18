@@ -4,7 +4,7 @@ import org.apache.kafka.clients.producer.*;
 import java.util.Properties;
 
 public class KafkaProducerHelper {
-    private static final String BOOTSTRAP_SERVERS = "localhost:9092";
+    private static final String BOOTSTRAP_SERVERS = "host.docker.internal:9092";
     private static final String OUTPUT_TOPIC = "validatedrequests";
 
     private static Producer<String, String> createProducer() {

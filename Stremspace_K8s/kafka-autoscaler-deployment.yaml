@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-autoscaler
+  namespace: streamspace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-autoscaler
+  template:
+    metadata:
+      labels:
+        app: kafka-autoscaler
+    spec:
+      containers:
+        - name: kafka-autoscaler
+          image: kafka-autoscaler:latest  # Build and push your custom image
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PROMETHEUS_URL
+              value: "http://prometheus.streamspace.svc.cluster.local:9090"
+            - name: DEPLOYMENT_NAME
+              value: "kafka-streams-app"
+            - name: NAMESPACE
+              value: "streamspace"
+          resources:
+            requests:
+              cpu: "250m"        # Request 250 millicores (0.25 vCPU)
+              memory: "256Mi"    # Request 256 MiB of memory
+            limits:
+              cpu: "500m"        # Limit CPU to 500 millicores (0.5 vCPU)
+              memory: "512Mi"    # Limit memory to 512 MiB

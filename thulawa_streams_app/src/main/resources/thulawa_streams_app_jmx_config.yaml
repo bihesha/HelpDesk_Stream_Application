@@ -1,0 +1,39 @@
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  - pattern: '.*<type=thulawa-jvm-metrics><>thulawa-heap-memory-used'
+    name: thulawa_heap_memory_used
+    help: The amount of heap memory currently used
+    type: GAUGE
+  - pattern: '.*<type=thulawa-jvm-metrics><>thulawa-heap-memory-max'
+    name: thulawa_heap_memory_max
+    help: The maximum amount of heap memory available
+    type: GAUGE
+  - pattern: '.*<type=thulawa-jvm-metrics><>thulawa-cpu-usage'
+    name: thulawa_cpu_usage
+    help: The system-wide CPU usage as a percentage
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-high-priority-tasks-processed'
+    name: thulawa_high_priority_tasks_processed
+    help: Number of tasks processed by high-priority threads
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-low-priority-tasks-processed'
+    name: thulawa_low_priority_tasks_processed
+    help: Number of tasks processed by low-priority threads
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-combined-throughput'
+    name: thulawa_combined_throughput
+    help: Combined throughput of tasks processed per second
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-combined-tasks-processed'
+    name: Total_thulawa_combined_tasks_processed
+    help: Combined throughput of tasks processed total
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-total-number-of-events-processed'
+    name: thulawa_total_events_processed
+    help: Total number of all events processed
+    type: GAUGE
+  - pattern: '.*<type=thulawa-metrics><>thulawa-event-processing-rate'
+    name: thulawa-event-processing-rate
+    help: Rate of processing Events
+    type: GAUGE
