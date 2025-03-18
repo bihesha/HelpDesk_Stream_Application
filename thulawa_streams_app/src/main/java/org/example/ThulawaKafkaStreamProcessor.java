@@ -17,8 +17,8 @@ import org.slf4j.LoggerFactory;
 import java.util.Properties;
 
 public class ThulawaKafkaStreamProcessor {
-    private static final Logger logger = LoggerFactory.getLogger(IssueStreamsProcessor.class);
-    private static final String INPUT_TOPIC = "issueTemp";
+    private static final Logger logger = LoggerFactory.getLogger(ThulawaKafkaStreamProcessor.class);
+    private static final String INPUT_TOPIC = "issueRequests";
     private static final String OUTPUT_TOPIC = "validatedrequests";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
