@@ -18,7 +18,8 @@ except config.ConfigException:
 
 NAMESPACE = "streamspace"
 DEPLOYMENT_NAME = "kafka-streams-app"
-PROMETHEUS_URL = "http://kafka-streams-service.streamspace.svc.cluster.local:8080/metrics"
+#PROMETHEUS_URL = "http://kafka-streams-service.streamspace.svc.cluster.local:8080/metrics"
+PROMETHEUS_URL = "http://prometheus.streamspace.svc.cluster.local:9090/api/v1/query"
 
 # Function to get metric values from Prometheus
 def get_metric(metric_name):
