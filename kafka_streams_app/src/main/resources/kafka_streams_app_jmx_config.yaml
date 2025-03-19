@@ -1,0 +1,15 @@
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  - pattern: kafka.streams<type=stream-thread-metrics,.*>process-rate
+    name: kafka_streams_processor_node_process_rate
+    help: Process rate of a stream processor node
+    type: GAUGE
+  - pattern: kafka.streams<type=stream-thread-metrics,.*>process-total
+    name: kafka_streams_thread_process_records_max
+    help: Total number of processed records by a stream thread
+    type: GAUGE
+  - pattern: '.*<type=stream-thread-metrics><>process-records-avg'
+    name: kafka_streams_thread_process_records_avg
+    help: Average number of processed records per second by a stream thread
+    type: GAUGE
