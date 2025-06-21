@@ -31,9 +31,6 @@
                 <version>2.15.0</version>
             </dependency>
 
-
-
-
             <dependency>
                 <groupId>org.eclipse.angus</groupId>
                 <artifactId>angus-mail</artifactId>
